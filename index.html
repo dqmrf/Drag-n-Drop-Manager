@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Drop Manader</title>
+</head>
+<body>
+
+    <h3>Drag Tree</h3>
+
+    <ul id="tree">
+        <li><span>Tree of life</span>
+            <ul>
+                <li><span>Mushrooms</span>
+                    <ul>
+                        <li><span>Wood</span>
+                            <ul>
+                                <li><span>Chaga</span></li>
+                            </ul>
+                        </li>
+                        <li><span>Ground</span>
+                            <ul>
+                                <li><span>Agaric</span></li>
+                                <li><span>Aspen</span></li>
+                            </ul>
+
+                        </li>
+                    </ul>
+                </li>
+                <li><span>Animals</span>
+                    <ul>
+                        <li><span>Amphibians</span>
+                            <ul>
+                                <li><span>Frogs</span></li>
+                                <li><span>Salamanders</span></li>
+                                <li><span>Newts</span></li>
+                            </ul>
+                        </li>
+                        <li><span>Mammals</span>
+                            <ul>
+                                <li><span>Cows</span></li>
+                                <li><span>Donkeys</span></li>
+                                <li><span>Dogs</span></li>
+                                <li><span>Tigers</span></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+    <script src="js/DragManager.js"></script>
+    <script src="js/helpers/functions.js"></script>
+    <script src="js/modules/DragZone.js"></script>
+    <script src="js/modules/DragAvatar.js"></script>
+    <script src="js/modules/DropTarget.js"></script>
+    <script>
+        var tree = document.getElementById('tree');
+        new DragZone(tree);
+        new DropTarget(tree);
+    </script>
+
+</body>
+</html>
