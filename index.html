@@ -6,10 +6,38 @@
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Drag'n'drop Manager</title>
+    <script src="app/DragManager.js"></script>
+    <script src="app/helpers/functions.js"></script>
+    <script src="app/modules/DragZone.js"></script>
+    <script src="app/modules/DragAvatar.js"></script>
+    <script src="app/modules/DropTarget.js"></script>
+    <script src="demo/TreeDragAvatar.js"></script>
+    <script src="demo/TreeDragZone.js"></script>
+    <script src="demo/TreeDropTarget.js"></script>
+    <style>
+        #tree span:hover {
+            cursor: pointer;
+            font-weight: bold;
+        }
+        #tree span.hover,
+        #tree span.hover:hover {
+            color: red;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        span.avatar {
+            padding: 1px;
+            border: 1px dotted black;
+            background: white;
+            cursor: pointer;
+            opacity: 0.6;
+            filter: progid: DXImageTransform.Microsoft.Alpha(opacity=60);
+        }
+    </style>
 </head>
 <body>
 
-    <h3>Drag Tree</h3>
+    <h3>Drag'n'drop Tree</h3>
 
     <ul id="tree">
         <li><span>Tree of life</span>
@@ -52,15 +80,10 @@
         </li>
     </ul>
 
-    <script src="js/DragManager.js"></script>
-    <script src="js/helpers/functions.js"></script>
-    <script src="js/modules/DragZone.js"></script>
-    <script src="js/modules/DragAvatar.js"></script>
-    <script src="js/modules/DropTarget.js"></script>
     <script>
         var tree = document.getElementById('tree');
-        new DragZone(tree);
-        new DropTarget(tree);
+        new TreeDragZone(tree);
+        new TreeDropTarget(tree);
     </script>
 
 </body>
