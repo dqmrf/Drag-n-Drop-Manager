@@ -5,13 +5,14 @@ function TreeDragAvatar(dragZone, dragElem) {
 extend(TreeDragAvatar, DragAvatar);
 
 TreeDragAvatar.prototype.initFromEvent = function(downX, downY, event) {
-    if (event.tagName !== 'SPAN') return false;
+
+    if (event.target.tagName != 'SPAN') return false;
 
     this._dragZoneElem = event.target;
     var elem = this._elem = this._dragZoneElem.cloneNode(true);
     elem.className = 'avatar';
 
-    var coords = getCoords(elem);
+    var coords = getCoords(this._dragZoneElem);
     this._shiftX = downX - coords.left;
     this._shiftY = downY - coords.top;
 
@@ -27,5 +28,9 @@ TreeDragAvatar.prototype._destroy = function() {
 };
 
 TreeDragAvatar.prototype.onDragEnd = function() {
+    this._destroy();
+};
+
+TreeDragAvatar.prototype.onDragCancel = function() {
     this._destroy();
 };

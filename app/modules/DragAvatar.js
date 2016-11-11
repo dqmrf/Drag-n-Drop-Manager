@@ -4,7 +4,7 @@ function DragAvatar(dragZone, dragElem) {
     this._elem = dragElem;
 }
 
-DragAvatar.prototype.detDragInfo = function(event) {
+DragAvatar.prototype.getDragInfo = function(event) {
     return {
         elem: this._elem,
         dragZoneElem: this._dragZoneElem,

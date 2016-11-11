@@ -39,9 +39,9 @@
 
             var newDropTarget = findDropTarget(e);
 
-            if (newDropTarget !== dropTarget) {
-                newDropTarget && dropTarget.onDragLeave(newDropTarget, avatar, e);
-                dropTarget && newDropTarget.onDragEnter(dropTarget, avatar, e);
+            if (newDropTarget != dropTarget) {
+                dropTarget && dropTarget.onDragLeave(newDropTarget, avatar, e);
+                newDropTarget && newDropTarget.onDragEnter(dropTarget, avatar, e);
             }
 
             dropTarget = newDropTarget;
